@@ -32,7 +32,7 @@ class User(AbstractUser):
         
     def __str__(self):
         """ String representation of this User"""
-        return f'{self.email}, {self.name}, {self.username}'
+        return f'{self.name}'
 
 
 class UserProfile(models.Model):
