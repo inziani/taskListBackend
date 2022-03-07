@@ -5,7 +5,7 @@ from django.contrib.auth.base_user import BaseUserManager
 
 
 from .models import User, UserProfile
-from .forms import CustomUserCreationForm, CustomUserChangeForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm, RegistrationForm
 
 
 
@@ -19,7 +19,7 @@ class UserProfileInline(admin.StackedInline):
 
 class CustomUserAdmin(UserAdmin):
     model = User
-    form = CustomUserChangeForm
+    form = RegistrationForm
     add_form = CustomUserCreationForm
     
    

@@ -1,19 +1,29 @@
 from django.contrib.auth.models import BaseUserManager
 
 class UserManager(BaseUserManager):
-    def _create_user(self, email, username, name, password, **extra_fields):
+    def _create_user(self, name, email, dateOfBirth, password, **extra_fields):
 
         """ Create and save user with the supplied details"""
 
         if not email:
             raise ValueError('The email must be given')
-        username = username
-        password = password
+        # username = username
+        name = name
         email = self.normalize_email(email)
-        user = self.model(email=email, **extra_fields)
+        dateOfBirth = dateOfBirth
+        password = password
+        user = self.model(email=email,name=name, dateOfBirth=dateOfBirth, **extra_fields)
         user.set_password(password)
         user.save(using=self.db)
         return user
+
+    def create_user(self, name, email, dateOfBirth, password, **extra_fields):
+        extra_fields.setdefault('is_superuser', False)
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_active', True)
+        return self._create_user( name, email, dateOfBirth, password, **extra_fields)
+
+
 
     def create_superuser(self, email, password, **extra_fields):
         username = username

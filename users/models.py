@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, AbstractBaseUser
 from django.db import models
 from users.managers import UserManager
 from datetime import datetime, timedelta
@@ -9,7 +9,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 
 class User(AbstractUser):
-    username = models.CharField(max_length=20, unique=True, default='USERNAME')
+    # username = models.CharField(max_length=20, unique=True, default='USERNAME')
     email = models.EmailField(unique=True, null=False)
     name = models.CharField(max_length=225)
     dateOfBirth = models.DateField(blank=True, null=True)
