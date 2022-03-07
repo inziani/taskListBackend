@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # my apps
 
     'users',
+    'tasks',
     
 
     #Installed services

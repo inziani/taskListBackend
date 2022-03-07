@@ -9,11 +9,11 @@ class Tasks(models.Model):
     title = models.CharField(max_length=32, blank=False, default='Title') 
     description = models.CharField(max_length=132, blank=False, default='Task Details')
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='tasks', default=1)
-    dateCreated = models.DateTimeField(auto_now_add=True)
-    dateChanged = models.DateTimeField(auto_now=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_changed = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ('dateCreated',)
+        ordering = ('date_created',)
 
     def __str__(self):
         return f'{self.title}, {self.owner}'
