@@ -24,6 +24,8 @@ class TaskListDefaultRouter(routers.DefaultRouter):
 router = TaskListDefaultRouter()
 from users.urls import router as users_router
 router.extend(users_router)
+from tasks.urls import router as tasks_router
+router.extend(tasks_router)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
