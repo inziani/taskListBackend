@@ -7,11 +7,7 @@ from .serializers import UserSerializer, UserProfileSerializer, RegistrationSeri
 
 # Create your views here.
 
-"""
-    API endpoint that allows users to be viewed or edited.
-    """
-
-class UserViewSet(viewsets.ReadOnlyModelViewSet):
+class UserViewSet(viewsets.ModelViewSet):
     """Provide list and retrieve"""
     queryset = User.objects.all()
     serializer_class = UserSerializer
