@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-8ec5a#jc-ylob7tcnws$^*f%_^^q#ag7so^s#^h=z4eaha%%je
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost:4200', '0.0.0.0' ]
+# ALLOWED_HOSTS = ['localhost','8000' ]
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'tasks',
     'rest_framework_simplejwt',
+    "corsheaders",
    
     
 
@@ -62,7 +63,7 @@ REST_FRAMEWORK = {
    'DEFAULT_AUTHENTICATION_CLASSES': (
        
         'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication'
+        'rest_framework.authentication.BasicAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
    ),
 
@@ -75,12 +76,15 @@ MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'taskList_project.urls'
 AUTH_USER_MODEL = 'users.User'
@@ -102,6 +106,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'taskList_project.wsgi.application'
+
+COR_ORIGIN_ALLOW_ALL = False
+COR_ORIGIN_WHITELIST = (
+
+    'localhost:4200',
+    '127.0.0.1:9000'
+)
 
 
 # Database

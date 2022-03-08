@@ -7,10 +7,9 @@ name = "pypi"
 django = "==4.0.3"
 psycopg2-binary = "==2.9.3"
 djangorestframework = "*"
-django-cors-headers = "*"
 django-rest-auth = "==0.9.5"
-dj-rest-auth = "*"
 djangorestframework-simplejwt = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 
