@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'users',
     'tasks',
     'rest_framework_simplejwt',
-    "corsheaders",
+    # "corsheaders",
    
     
 
@@ -76,13 +76,25 @@ MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    "corsheaders.middleware.CorsMiddleware",
+    # 'taskList_project.middleware.open_access_middleware'
+    # "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tasks.cors.CORSMiddleware',
+    
 ]
+
+COR_ORIGIN_ALLOW_ALL = False
+COR_ORIGIN_WHITELIST = (
+
+    'http://localhost:4200',
+    'http://127.0.0.1:9000',
+    'http://localhost:8000'
+)
+
 
 
 
@@ -107,12 +119,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'taskList_project.wsgi.application'
 
-COR_ORIGIN_ALLOW_ALL = False
-COR_ORIGIN_WHITELIST = (
-
-    'localhost:4200',
-    '127.0.0.1:9000'
-)
 
 
 # Database
