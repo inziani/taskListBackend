@@ -32,10 +32,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*', 'https://rocky-cove-79290.herokuapp.com/']
 
-CSRF_TRUSTED_ORIGINS = [
 
-    'https://rocky-cove-79290.herokuapp.com/'
-]
 
 
 # Application definition
@@ -93,6 +90,27 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'tasks.cors.CORSMiddleware',
     
+]
+CSRF_TRUSTED_ORIGINS = ['https://rocky-cove-79290.herokuapp.com']
+CORS_ALLOW_METHODS = [
+'DELETE',
+'GET',
+'OPTIONS',
+'PATCH',
+'POST',
+'PUT',
+]
+
+CORS_ALLOW_HEADERS = [
+'accept',
+'accept-encoding',
+'authorization',
+'content-type',
+'dnt',
+'origin',
+'user-agent',
+'x-csrftoken',
+'x-requested-with',
 ]
 
 COR_ORIGIN_ALLOW_ALL = False
