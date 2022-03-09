@@ -27,6 +27,6 @@ COPY . /code/
 RUN python manage.py collectstatic --noinput
 
 # run gunicorn
-CMD gunicorn hello_django.wsgi:application --bind 0.0.0.0:$PORT
+CMD gunicorn rocky-cove-79290.wsgi:application --bind 0.0.0.0:$PORT
 
 
