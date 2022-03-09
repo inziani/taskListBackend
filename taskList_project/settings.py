@@ -92,7 +92,8 @@ COR_ORIGIN_WHITELIST = (
 
     'http://localhost:4200',
     'http://127.0.0.1:9000',
-    'http://localhost:8000'
+    'http://localhost:8000',
+    "http://quotes.stormconsultancy.co.uk/random.json"
 )
 
 
