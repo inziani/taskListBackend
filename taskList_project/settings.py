@@ -32,6 +32,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'https://rocky-cove-79290.herokuapp.com/']
 
+CSRF_TRUSTED_ORIGINS = [
+    
+    'https://rocky-cove-79290.herokuapp.com/'
+]
+
 
 # Application definition
 
