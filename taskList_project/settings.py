@@ -115,7 +115,7 @@ CORS_ALLOW_HEADERS = [
 'x-requested-with',
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = (
 
     'http://localhost:4200',
