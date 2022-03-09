@@ -6,6 +6,7 @@ FROM python:3.10.2
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+ENV DEBUG 0
 
 # Set work directory
 
@@ -21,5 +22,11 @@ RUN pip install pipenv && pipenv install --system
 COPY . /code/
 
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+# collect static files
+RUN python manage.py collectstatic --noinput
+
+# run gunicorn
+CMD gunicorn hello_django.wsgi:application --bind 0.0.0.0:$PORT
 
 
