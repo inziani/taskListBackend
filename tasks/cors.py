@@ -10,3 +10,5 @@ class CORSMiddleware(object):
         response["Access-Control-Max-Age"] = "*"
 
         return response
+
+        

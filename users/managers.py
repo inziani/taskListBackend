@@ -1,7 +1,7 @@
-from django.contrib.auth.models import BaseUserManager
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 class UserManager(BaseUserManager):
-    def _create_user(self, name, email, dateOfBirth, password, **extra_fields):
+    def _create_user(self, name, email, dateOfBirth, password, username, **extra_fields):
 
         """ Create and save user with the supplied details"""
 
@@ -26,7 +26,7 @@ class UserManager(BaseUserManager):
 
 
     def create_superuser(self, email, password, **extra_fields):
-        username = username
+        # username = username
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_active', True)
@@ -37,5 +37,5 @@ class UserManager(BaseUserManager):
             raise ValueError('is_staff must have is_staff = True.')
         if extra_fields.get('is_active') is not True:
             raise ValueError('is_active must have is_active = True.')
-        return self.create_user(email, password, username, **extra_fields)
+        return self.create_user(email=email, password=password, **extra_fields)
 

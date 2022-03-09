@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'users',
     'tasks',
     'rest_framework_simplejwt',
-    # "corsheaders",
+    "corsheaders",
    
     
 
@@ -81,6 +81,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -88,9 +89,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'tasks.cors.CORSMiddleware',
+    # 'tasks.cors.CORSMiddleware',
     
 ]
+
 CSRF_TRUSTED_ORIGINS = ['https://rocky-cove-79290.herokuapp.com']
 CORS_ALLOW_METHODS = [
 'DELETE',
@@ -113,13 +115,14 @@ CORS_ALLOW_HEADERS = [
 'x-requested-with',
 ]
 
-COR_ORIGIN_ALLOW_ALL = False
-COR_ORIGIN_WHITELIST = (
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = (
 
     'http://localhost:4200',
     'http://127.0.0.1:9000',
     'http://localhost:8000',
-    "http://quotes.stormconsultancy.co.uk/random.json"
+    "http://quotes.stormconsultancy.co.uk/random.json",
+    'https://rocky-cove-79290.herokuapp.com'
 )
 
 
