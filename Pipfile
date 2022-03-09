@@ -15,6 +15,7 @@ django-environ = "*"
 gunicorn = "==20.1.0"
 whitenoise = "==5.3.0"
 dj-database-url = "==0.5.0"
+django-heroku = "*"
 
 [dev-packages]
 
