@@ -4,6 +4,7 @@ from rest_framework import viewsets
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.routers import DefaultRouter, SimpleRouter
 
+
 from tasks import views
 from tasks.views import TasksViewSet
 

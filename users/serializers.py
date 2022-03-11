@@ -8,7 +8,7 @@ from .models import User, UserProfile
 class UserSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'id', 'name', 'username', 'email', 'dateOfBirth', 'is_active', 'is_staff', 'is_superuser', 'date_joined')
+        fields = ('url', 'id', 'name', 'email', 'dateOfBirth', 'is_active', 'is_staff', 'is_superuser', 'date_joined')
 
 class UserProfileSerializer(HyperlinkedModelSerializer):
     #Displays user Profiles
@@ -31,7 +31,7 @@ class RegistrationSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = User
         # List all the fields that could possible be included in a request or response including fields specified explicitly above
-        fields = ['id','username','email', 'name','dateOfBirth', 'token', 'password']
+        fields = ['id','email', 'name','dateOfBirth', 'token', 'password']
 
     def create(self, validated_data):
         # Use the create_user method to create new user

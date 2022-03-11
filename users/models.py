@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 
 # Create your models here.
 
-class User(AbstractUser):
+class User(AbstractBaseUser):
     # username = models.CharField(max_length=20, unique=True, default='USERNAME')
     email = models.EmailField(unique=True, null=False)
     name = models.CharField(max_length=225)

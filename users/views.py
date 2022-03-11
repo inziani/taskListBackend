@@ -1,4 +1,5 @@
 from django.shortcuts import render
+# from django.views.decorators.csrf import csrf_protect
 from rest_framework.permissions import(AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly)
 from rest_framework import viewsets, status
 
@@ -9,11 +10,14 @@ from .serializers import UserSerializer, UserProfileSerializer, RegistrationSeri
 
 class UserViewSet(viewsets.ModelViewSet):
     """Provide list and retrieve"""
+
+    # @method_decorator(csrf_protect)
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAuthenticated]
 
 class UserProfileViewSet(viewsets.ReadOnlyModelViewSet):
+    # @method_decorator(csrf_protect)
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]

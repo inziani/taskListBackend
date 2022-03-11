@@ -9,7 +9,7 @@ class RegistrationForm(forms.ModelForm):
 
   class Meta:
     model = User
-    fields = ('username', 'email','name', 'dateOfBirth')
+    fields = ('email','name', 'dateOfBirth')
 
   def save(self, commit=True):
     # Save the password in a hashed format

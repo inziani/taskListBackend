@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'https://rocky-cove-79290.herokuapp.com/']
 
@@ -122,7 +122,6 @@ CORS_ALLOWED_ORIGINS = (
     'http://localhost:4200',
     'http://127.0.0.1:9000',
     'http://localhost:8000',
-    "http://quotes.stormconsultancy.co.uk/random.json",
     'https://rocky-cove-79290.herokuapp.com'
 )
 
